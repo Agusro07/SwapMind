@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwampMind - Intercambio</title>
+  <link rel="stylesheet" href="css/publicar.css">
+</head>
+<body>
+  <script src="js/session-manager.js"></script>
+  
+  <header class="encabezado">
+    <nav class="navegacion-principal">
+      <div class="seccion-logo">
+        <div class="logo">SwapMind</div>
+        <div class="nombre-usuario usuario-badge" id="nombreUsuario">Invitado</div>
+      </div>
+      <div class="menu-navegacion">
+        <a href="house.html" class="enlace-nav">🏠 Inicio</a>
+        <a href="chats.html" class="enlace-nav">💬 Chats</a>
+        <a href="nosotros.html" class="enlace-nav">👥 Nosotros</a>
+        <a href="asistente.html" class="enlace-nav">🤖 Asistente IA</a>
+        <a href="#" class="enlace-nav activo">📝 Publicar</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="contenedor">
+    <div class="introduccion">
+      <h1>🔄 Troka - Sistema de Truques</h1>
+      <p>¡Encuentra truques circulares inteligentes entre múltiples personas!</p>
+    </div>
+
+    <div class="contenido">
+      <!-- Formulario para agregar truques -->
+      <div class="seccion">
+        <h2 class="titulo-seccion">➕ Agregar Nuevo Truque</h2>
+        <div class="formulario-truque">
+          <div class="grupo-input">
+            <label for="nombrePersona">👤 Nombre de la Persona</label>
+            <input type="text" id="nombrePersona" placeholder="Ej: María">
+          </div>
+          <div class="grupo-input">
+            <label for="objetoTiene">📦 ¿Qué tiene?</label>
+            <input type="text" id="objetoTiene" placeholder="Ej: Pelota">
+          </div>
+          <div class="grupo-input">
+            <label for="objetoQuiere">🎯 ¿Qué quiere?</label>
+            <input type="text" id="objetoQuiere" placeholder="Ej: Bicicleta">
+          </div>
+          <button class="boton" onclick="agregarTruque()">Agregar</button>
+        </div>
+      </div>
+
+      <!-- Tabla de truques -->
+      <div class="seccion">
+        <h2 class="titulo-seccion">📋 Lista de Truques Actuales</h2>
+        <table class="tabla-truques" id="tablaTruques">
+          <thead>
+            <tr>
+              <th>👤 Persona</th>
+              <th>📦 Tiene</th>
+              <th>🎯 Quiere</th>
+              <th>🗑️ Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Se cargará dinámicamente con JS desde la base de datos -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Área de resultados -->
+      <div id="areaResultados"></div>
+    </div>
+  </div>
+
+  <script src="js/publicar.js"></script>
+</body>
+</html>

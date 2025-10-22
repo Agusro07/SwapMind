@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapMind - Sobre Nosotros</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fffe 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .contenedor {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .encabezado {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .navegacion-principal {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .seccion-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #22c55e;
+        }
+        
+        .logo::before {
+            content: "⚡";
+            font-size: 2rem;
+            color: #3b82f6;
+        }
+        
+        .nombre-usuario {
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        
+        .menu-navegacion {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .enlace-nav {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .enlace-nav:hover {
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+            transform: translateY(-2px);
+        }
+        
+        .enlace-nav.activo {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+        }
+        
+        /* Contenido principal */
+        .contenido-principal {
+            padding: 2rem 0;
+        }
+        
+        .titulo-pagina {
+            text-align: center;
+            font-size: 3rem;
+            color: #22c55e;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .subtitulo-pagina {
+            text-align: center;
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+        
+        /* Secciones de información */
+        .seccion-info {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(34, 197, 94, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .seccion-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .titulo-seccion {
+            font-size: 2rem;
+            color: #22c55e;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .icono-seccion {
+            font-size: 2.5rem;
+            color: #3b82f6;
+        }
+        
+        .descripcion-seccion {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            text-align: justify;
+        }
+        
+        /* Sección del equipo */
+        .contenedor-equipo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .miembro-equipo {
+            background: linear-gradient(135deg, #f8fffe 0%, #ffffff 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(34, 197, 94, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .miembro-equipo::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #22c55e, #3b82f6, #22c55e);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .miembro-equipo:hover::before {
+            transform: translateX(0);
+        }
+        
+        .miembro-equipo:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(34, 197, 94, 0.2);
+        }
+        
+        .foto-miembro {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            font-weight: bold;
+            border: 4px solid rgba(34, 197, 94, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .miembro-equipo:hover .foto-miembro {
+            transform: scale(1.1);
+            border-color: #22c55e;
+        }
+        
+        .nombre-miembro {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .rol-miembro {
+            color: #3b82f6;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .descripcion-miembro {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* Sección de valores */
+        .grid-valores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .valor-item {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fffe 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid rgba(34, 197, 94, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .valor-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(34, 197, 94, 0.3);
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.15);
+        }
+        
+        .icono-valor {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .titulo-valor {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .descripcion-valor {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        /* Sección de contacto */
+        .seccion-contacto {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            text-align: center;
+        }
+        
+        .seccion-contacto .titulo-seccion {
+            color: white;
+        }
+        
+        .seccion-contacto .descripcion-seccion {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+        }
+        
+        .botones-contacto {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn-contacto {
+            padding: 1rem 2rem;
+            background: white;
+            color: #22c55e;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-contacto:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+            color: #16a34a;
+        }
+        
+        /* Animaciones */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .seccion-info:nth-child(1) { animation-delay: 0.1s; }
+        .seccion-info:nth-child(2) { animation-delay: 0.2s; }
+        .seccion-info:nth-child(3) { animation-delay: 0.3s; }
+        .seccion-info:nth-child(4) { animation-delay: 0.4s; }
+        .seccion-info:nth-child(5) { animation-delay: 0.5s; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-navegacion {
+                display: none;
+            }
+            
+            .navegacion-principal {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .titulo-pagina {
+                font-size: 2rem;
+            }
+            
+            .seccion-info {
+                padding: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .contenedor-equipo {
+                grid-template-columns: 1fr;
+            }
+            
+            .botones-contacto {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* Efectos hover mejorados */
+        .seccion-info::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(34, 197, 94, 0.03), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            border-radius: 20px;
+        }
+        
+        .seccion-info:hover::before {
+            opacity: 1;
+        }
+        
+        .seccion-info {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <script src="js/session-manager.js"></script>
+    
+    <header class="encabezado">
+        <div class="contenedor">
+            <nav class="navegacion-principal">
+                <div class="seccion-logo">
+                    <div class="logo">SwapMind</div>
+                    <div class="nombre-usuario" class="usuario-badge" id="nombreUsuario">Invitado</div>
+                </div>
+                
+                <div class="menu-navegacion">
+                    <a href="house.html" class="enlace-nav">🏠 Inicio</a>
+                    <a href="chats.html" class="enlace-nav">💬 Chats</a>
+                    <a href="#" class="enlace-nav activo">👥 Nosotros</a>
+                    <a href="asistente.html" class="enlace-nav">🤖 Asistente IA</a>
+                    <a href="publicar.html" class="enlace-nav">📝 Publicar</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contenedor contenido-principal">
+    <h1 class="titulo-pagina fade-in">Sobre Nosotros</h1>
+    <p class="subtitulo-pagina fade-in">Conoce al equipo detrás de SwapMind y nuestra visión de un mundo más sostenible</p>
+
+    <section class="seccion-info fade-in">
+        <h2 class="titulo-seccion">
+            <span class="icono-seccion"><span class="emoji"></span></span>
+            Nuestra Historia
+        </h2>
+        <p class="descripcion-seccion">
+            SwapMind nació en 2025 con una visión clara: promover una economía colaborativa y más sostenible a través del intercambio inteligente de productos. Lo que comenzó como una pequeña idea entre amigos, se ha convertido en una plataforma innovadora que une a miles de personas con un propósito en común: dar una segunda vida a las cosas mientras construimos una comunidad más conectada y consciente del medio ambiente.
+        </p>
+    </section>
+
+    <section class="seccion-info fade-in">
+        <h2 class="titulo-seccion">
+            <span class="icono-seccion"><span class="emoji"></span></span>
+            Nuestro Equipo
+        </h2>
+        <p class="descripcion-seccion">
+            Contamos con un equipo diverso de profesionales apasionados por la innovación, la tecnología y la sostenibilidad. Cada miembro aporta su experiencia única para hacer de SwapMind una experiencia excepcional.
+        </p>
+
+        <div class="contenedor-equipo">
+            <div class="miembro-equipo">
+                <div class="foto-miembro">M</div>
+                <h3 class="nombre-miembro">Erik Silva</h3>
+                <div class="rol-miembro"><span class="emoji">🔒</span> Engineer de Ciberseguridad</div>
+                <p class="descripcion-miembro">
+                    Especialista en proteger la plataforma y los datos de nuestros usuarios. Garantiza que cada intercambio sea seguro y confiable.
+                </p>
+            </div>
+
+            <div class="miembro-equipo">
+                <div class="foto-miembro">M</div>
+                <h3 class="nombre-miembro">Matias Pereyra</h3>
+                <div class="rol-miembro"><span class="emoji">⚙️</span> Backend Developer</div>
+                <p class="descripcion-miembro">
+                    Arquitecto de la lógica que impulsa SwapMind. Diseña y optimiza los sistemas que hacen posible cada intercambio.
+                </p>
+            </div>
+
+            <div class="miembro-equipo">
+                <div class="foto-miembro">A</div>
+                <h3 class="nombre-miembro">Allan Alanis</h3>
+                <div class="rol-miembro"><span class="emoji">📋</span> Project Manager</div>
+                <p class="descripcion-miembro">
+                    Coordinador maestro que asegura que todos los elementos del proyecto trabajen en armonía para entregar la mejor experiencia.
+                </p>
+            </div>
+
+            <div class="miembro-equipo">
+                <div class="foto-miembro">D</div>
+                <h3 class="nombre-miembro">Demian Cardona</h3>
+                <div class="rol-miembro"><span class="emoji">📱</span> Marketing Digital</div>
+                <p class="descripcion-miembro">
+                    Estratega digital que conecta SwapMind con nuestra comunidad y hace crecer nuestro impacto positivo en el mundo.
+                </p>
+            </div>
+
+            <div class="miembro-equipo">
+                <div class="foto-miembro">AG</div>
+                <h3 class="nombre-miembro">Agustin Anselmi</h3>
+                <div class="rol-miembro"><span class="emoji">🛡️</span> Engineer de Ciberseguridad</div>
+                <p class="descripcion-miembro">
+                    Guardián digital de nuestra plataforma. Trabaja incansablemente para mantener SwapMind como un espacio seguro para todos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion-info fade-in">
+        <h2 class="titulo-seccion">
+            <span class="icono-seccion"><span class="emoji"></span></span>
+            Nuestra Visión
+        </h2>
+        <p class="descripcion-seccion">
+            Ser la plataforma líder mundial en intercambio sostenible, creando una red global de personas que valoran la reutilización, la comunidad y el cuidado del planeta. Imaginamos un futuro donde cada objeto tenga múltiples vidas y cada intercambio fortalezca los lazos humanos.
+        </p>
+    </section>
+
+    <section class="seccion-info fade-in">
+        <h2 class="titulo-seccion">
+            <span class="icono-seccion"><span class="emoji"></span></span>
+            Nuestra Misión
+        </h2>
+        <p class="descripcion-seccion">
+            Crear herramientas innovadoras e intuitivas que faciliten el intercambio seguro y confiable de productos, promoviendo un estilo de vida más sostenible y conectado. Buscamos optimizar el uso de recursos, generar valor compartido y construir una comunidad global comprometida con el cuidado del medio ambiente.
+        </p>
+    </section>
+
+    <section class="seccion-info fade-in">
+        <h2 class="titulo-seccion">
+            <span class="icono-seccion"><span class="emoji"></span></span>
+            Nuestros Valores
+        </h2>
+        <p class="descripcion-seccion">
+            Los principios que guían cada decisión y cada línea de código en SwapMind:
+        </p>
+
+        <div class="grid-valores">
+            <div class="valor-item">
+                <div class="icono-valor"><span class="emoji">🌱</span></div>
+                <h3 class="titulo-valor">Sostenibilidad</h3>
+                <p class="descripcion-valor">Comprometidos con reducir el desperdicio y promover la economía circular.</p>
+            </div>
+
+            <div class="valor-item">
+                <div class="icono-valor"><span class="emoji">🤝</span></div>
+                <h3 class="titulo-valor">Comunidad</h3>
+                <p class="descripcion-valor">Creemos en el poder de las conexiones humanas genuinas.</p>
+            </div>
+
+            <div class="valor-item">
+                <div class="icono-valor"><span class="emoji">🔄</span></div>
+                <h3 class="titulo-valor">Reutilización</h3>
+                <p class="descripcion-valor">Cada objeto merece una segunda oportunidad de ser útil.</p>
+            </div>
+
+            <div class="valor-item">
+                <div class="icono-valor"><span class="emoji">🛡️</span></div>
+                <h3 class="titulo-valor">Confianza</h3>
+                <p class="descripcion-valor">Seguridad y transparencia en cada interacción.</p>
+            </div>
+
+            <div class="valor-item">
+                <div class="icono-valor"><span class="emoji">💡</span></div>
+                <h3 class="titulo-valor">Innovación</h3>
+                <p class="descripcion-valor">Siempre buscando mejores formas de conectar personas y objetos.</p>
+            </div>
+
+            <div class="valor-item">
+                <div class="icono-valor"><span class="emoji">🌍</span></div>
+                <h3 class="titulo-valor">Impacto Global</h3>
+                <p class="descripcion-valor">Pequeños cambios locales que generan un gran impacto mundial.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion-info seccion-contacto fade-in">
+        <h2 class="titulo-seccion">
+            <span class="icono-seccion"><span class="emoji">📞</span></span>
+            ¿Quieres Saber Más?
+        </h2>
+        <p class="descripcion-seccion">
+            Estamos siempre abiertos a nuevas ideas, colaboraciones y feedback de nuestra comunidad. ¡Nos encantaría escucharte!
+        </p>
+
+        <div class="botones-contacto">
+            <a href="#" class="btn-contacto" onclick="mostrarContacto()">
+                <span class="emoji">📧</span> Contáctanos
+            </a>
+            <a href="#" class="btn-contacto" onclick="mostrarCarreras()">
+                <span class="emoji">💼</span> Únete al Equipo
+            </a>
+        </div>
+    </section>
+</main>
+
+   <script src="js/nosotros.js"></script>
+</body>
+</html>

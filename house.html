@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapMind - Intercambia Objetos</title>
+    <link rel="stylesheet" href="css/house.css">
+</head>
+<body>
+    <script src="js/house.js"></script>
+    <script src="js/session-manager.js"></script>
+
+  <header class="encabezado">
+        <div class="contenedor">
+            <nav class="navegacion-principal">
+                <div class="seccion-logo">
+                    <div class="logo">SwapMind</div>
+                    <div class="nombre-usuario" class="usuario-badge" id="nombreUsuario">Invitado</div>
+                </div>
+                
+                <div class="menu-navegacion">
+                    <a href="house.html" class="enlace-nav activo">🏠 Inicio</a>
+                    <a href="chats.html" class="enlace-nav">💬 Chats</a>
+                    <a href="nosotros.html" class="enlace-nav">👥 Nosotros</a>
+                    <a href="asistente.html" class="enlace-nav">🤖 Asistente IA</a>
+                    <a href="publicar.html" class="enlace-nav">📝 Publicar</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="seccion-busqueda fade-in">
+            <div class="barra-busqueda-principal">
+                <div class="contenedor-busqueda">
+                    <span class="icono-busqueda">🔍</span>
+                    <input type="text" class="input-busqueda" placeholder="¿Qué objeto estás buscando? Ej: bicicleta, gorro, ollas..." id="inputBusqueda">
+                </div>
+                <button class="btn-buscar" onclick="buscarPublicaciones()">Buscar</button>
+            </div>
+            
+            <div class="categorias-rapidas">
+                <span class="categoria-tag" onclick="filtrarPorCategoria('bicicletas')">🚲 Bicicletas</span>
+                <span class="categoria-tag" onclick="filtrarPorCategoria('ropa')">👕 Ropa</span>
+                <span class="categoria-tag" onclick="filtrarPorCategoria('electronica')">📱 Electrónicos</span>
+                <span class="categoria-tag" onclick="filtrarPorCategoria('hogar')">🏠 Hogar</span>
+                <span class="categoria-tag" onclick="filtrarPorCategoria('libros')">📚 Libros</span>
+                <span class="categoria-tag" onclick="filtrarPorCategoria('deportes')">⚽ Deportes</span>
+                <span class="categoria-tag" onclick="filtrarPorCategoria('musica')">🎵 Música</span>
+            </div>
+        </section>
+
+        <div class="contenido-principal">
+            <section class="seccion-publicaciones fade-in">
+                <h2 class="titulo-seccion">🔄 Intercambios de Objetos Recientes</h2>
+                <div id="listaPublicaciones">
+                    <!-- Las publicaciones se cargarán aquí -->
+                </div>
+            </section>
+
+            <aside class="barra-lateral">
+                <div class="widget fade-in">
+                    <h3>📂 Categorías Populares</h3>
+                    <ul class="lista-categorias">
+                        <li><a href="#" onclick="filtrarPorCategoria('bicicletas')">🚲 Bicicletas <span class="contador-categoria">23</span></a></li>
+                        <li><a href="#" onclick="filtrarPorCategoria('ropa')">👕 Ropa y Accesorios <span class="contador-categoria">45</span></a></li>
+                        <li><a href="#" onclick="filtrarPorCategoria('electronica')">📱 Electrónicos <span class="contador-categoria">31</span></a></li>
+                        <li><a href="#" onclick="filtrarPorCategoria('hogar')">🏠 Hogar y Cocina <span class="contador-categoria">28</span></a></li>
+                        <li><a href="#" onclick="filtrarPorCategoria('libros')">📚 Libros y Revistas <span class="contador-categoria">19</span></a></li>
+                        <li><a href="#" onclick="filtrarPorCategoria('deportes')">⚽ Deportes <span class="contador-categoria">16</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="widget fade-in">
+                    <h3>🔥 Tendencias</h3>
+                    <ul class="lista-categorias">
+                        <li><a href="#">🎮 Consolas de juegos</a></li>
+                        <li><a href="#">🧢 Gorros y sombreros</a></li>
+                        <li><a href="#">🍳 Utensilios de cocina</a></li>
+                        <li><a href="#">📖 Libros universitarios</a></li>
+                        <li><a href="#">🎸 Instrumentos musicales</a></li>
+                    </ul>
+                </div>
+
+                <div class="widget fade-in">
+                    <h3>💡 Consejo del día</h3>
+                    <p style="color: #666; font-size: 0.9rem; line-height: 1.5;">
+                        Para hacer intercambios exitosos, siempre incluye fotos claras y describe el estado real del objeto. ¡La honestidad genera confianza!
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <button class="btn-publicar-flotante" onclick="irAPublicar()" title="Publicar intercambio">
+        ➕
+    </button>
+    
+</body>
+</html>

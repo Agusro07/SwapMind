@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SwapMind - Intercambia Objetos</title>
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+    <script src="js/session-manager.js"></script>
+    <script src="js/index.js"></script>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">SwapMind</div>
+                <div class="nav-buttons">
+
+                    <!-- SessionManager llenará esto automáticamente -->
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero fade-in">
+                <h1>Intercambia Objetos</h1>
+                <p>Conecta, colabora e intercambia con SwapMind. La plataforma donde puedes intercambiar objetos de
+                    forma segura y generar valor compartido.</p>
+
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary" onclick="mostrarRegistro()">Comenzar Ahora</a>
+                    <a href="#" class="btn btn-guest" onclick="SessionManager.continuarComoInvitado()">Continuar como
+                        Invitado</a>
+                </div>
+
+                <div class="company-info">
+                    <h2>Powered by TROKA</h2>
+                    <p>Tecnología de vanguardia para el intercambio de objetos y consumo responsable. Construimos el
+                        futuro del intercambio sostenible.</p>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="feature fade-in">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Intercambio Inteligente de Objetos</h3>
+                    <p>Conecta con personas para intercambiar objetos útiles y darles una segunda vida a tus
+                        pertenencias.</p>
+                </div>
+
+                <div class="feature fade-in">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Intercambio Sostenible</h3>
+                    <p>Transforma objetos que ya no uses en algo que realmente necesites, contribuyendo a un consumo más
+                        responsable.</p>
+                </div>
+
+                <div class="feature fade-in">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Comunidad de Intercambio</h3>
+                    <p>Únete a una red global de personas que creen en el valor del intercambio y el consumo
+                        inteligente.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <span>© 2025 SwapMind</span>
+                <span class="troka-badge">🔧 TROKA Technology</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modales -->
+    <div id="modalLogin" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Iniciar Sesión</h2>
+                <span class="close" onclick="cerrarModal('modalLogin')">&times;</span>
+            </div>
+            <form id="formLogin">
+                <div class="form-group">
+                    <label for="emailLogin">Email:</label>
+                    <input type="email" id="emailLogin" name="email" required />
+                </div>
+                <div class="form-group">
+                    <label for="contrasenaLogin">Contraseña:</label>
+                    <input type="password" id="contrasenaLogin" name="contrasena" required />
+                </div>
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+                <p class="switch-modal">
+                    ¿No tienes cuenta? <a href="#" onclick="cambiarARegistro(event)">Regístrate aquí</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalRegistro" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Crear Cuenta</h2>
+                <span class="close" onclick="cerrarModal('modalRegistro')">&times;</span>
+            </div>
+            <form id="formRegistro">
+                <div class="form-group">
+                    <label for="nombreRegistro">Nombre completo:</label>
+                    <input type="text" id="nombreRegistro" name="nombre" required />
+                </div>
+                <div class="form-group">
+                    <label for="emailRegistro">Email:</label>
+                    <input type="email" id="emailRegistro" name="email" required />
+                </div>
+                <div class="form-group">
+                    <label for="contrasenaRegistro">Contraseña:</label>
+                    <input type="password" id="contrasenaRegistro" name="contrasena" required minlength="6" />
+                </div>
+                <div class="form-group">
+                    <label for="confirmarContrasena">Confirmar contraseña:</label>
+                    <input type="password" id="confirmarContrasena" name="confirmarContrasena" required minlength="6" />
+                </div>
+                <button type="submit" class="btn btn-primary">Crear Cuenta</button>
+                <p class="switch-modal">
+                    ¿Ya tienes cuenta? <a href="#" onclick="cambiarALogin(event)">Inicia sesión aquí</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapMind - Asistente IA</title>
+    <link rel="stylesheet" href="css/asistente.css">
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="navegacion-principal">
+            <div class="seccion-logo">
+                <div class="logo">SwapMind</div>
+                <div class="nombre-usuario" id="nombreUsuario">Invitado</div>
+            </div>
+            <div class="menu-navegacion">
+                <a href="house.html" class="enlace-nav">🏠 Inicio</a>
+                <a href="chats.html" class="enlace-nav">💬 Chats</a>
+                <a href="nosotros.html" class="enlace-nav">👥 Nosotros</a>
+                <a href="asistente.html" class="enlace-nav activo">🤖 Asistente IA</a>
+                <a href="publicar.html" class="enlace-nav">📝 Publicar</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="chat-contenedor">
+        <div class="chat-mensajes" id="chatMensajes"></div>
+        <div class="chat-input">
+            <input type="text" id="mensajeUsuario" placeholder="Escribe tu mensaje...">
+            <button onclick="enviarMensaje()">Enviar</button>
+        </div>
+    </main>
+
+    <script src="js/session-manager.js"></script>
+    <script src="js/asistente.js"></script>
+</body>
+</html>

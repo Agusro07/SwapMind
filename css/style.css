@@ -1,0 +1,373 @@
+/* =========================================================
+   🌱 ESTILOS GENERALES
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fffe 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container, .contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================================
+   🌿 HEADER / NAVEGACIÓN
+========================================================= */
+header, .encabezado {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+}
+
+nav, .navegacion-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #22c55e;
+}
+
+.logo::before {
+    content: "⚡";
+    font-size: 2rem;
+    color: #3b82f6;
+}
+
+.nav-buttons, .menu-navegacion {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nombre-usuario {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.enlace-nav, .btn {
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.enlace-nav {
+    color: #333;
+}
+
+.enlace-nav:hover {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+    transform: translateY(-2px);
+}
+
+.enlace-nav.activo {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+}
+
+/* =========================================================
+   🌤️ BOTONES
+========================================================= */
+.btn-outline {
+    background: transparent;
+    border: 2px solid #22c55e;
+    color: #22c55e;
+}
+
+.btn-outline:hover {
+    background: #22c55e;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.3);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
+}
+
+.btn-guest {
+    background: transparent;
+    border: 2px solid #3b82f6;
+    color: #3b82f6;
+}
+
+.btn-guest:hover {
+    background: #3b82f6;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+/* =========================================================
+   🧭 CONTENIDO PRINCIPAL / HERO
+========================================================= */
+main, .contenido-principal {
+    margin-top: 80px;
+    padding: 2rem 0;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 0 2rem;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.hero h1, .titulo-pagina {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #22c55e, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.hero p, .subtitulo-pagina {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   🌼 SECCIONES / TARJETAS / EQUIPO
+========================================================= */
+.seccion-info, .feature {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(34, 197, 94, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.seccion-info:hover, .feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.titulo-seccion, .feature h3 {
+    color: #22c55e;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.descripcion-seccion, .feature p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.contenedor-equipo, .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.miembro-equipo {
+    background: linear-gradient(135deg, #f8fffe 0%, #ffffff 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(34, 197, 94, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.miembro-equipo:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(34, 197, 94, 0.2);
+}
+
+.foto-miembro {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+    border: 4px solid rgba(34, 197, 94, 0.2);
+    transition: all 0.3s ease;
+}
+
+.miembro-equipo:hover .foto-miembro {
+    transform: scale(1.1);
+    border-color: #22c55e;
+}
+
+/* =========================================================
+   📩 MODALES / NOTIFICACIONES
+========================================================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease;
+    overflow: hidden;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close {
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.close:hover {
+    opacity: 0.7;
+}
+
+/* =========================================================
+   ✨ ANIMACIONES
+========================================================= */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* =========================================================
+   📱 RESPONSIVE
+========================================================= */
+@media (max-width: 768px) {
+    .nav-buttons, .menu-navegacion {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .hero h1, .titulo-pagina {
+        font-size: 2.5rem;
+    }
+
+    .contenedor-equipo {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   🔒 EMOJIS FIJOS
+========================================================= */
+span.emoji {
+    display: inline-block;
+    position: relative; /* evita que se muevan con scroll de transformaciones externas */
+    top: 0;
+    left: 0;
+}

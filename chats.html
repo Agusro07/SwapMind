@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapMind - Chats</title>
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div class="contenedor">
+            <nav class="navegacion-principal">
+                <div class="seccion-logo">
+                    <div class="logo">SwapMind</div>
+                    <div class="nombre-usuario" class="usuario-badge" id="nombreUsuario">Invitado</div>
+                </div>
+                
+                <div class="menu-navegacion">
+                    <a href="house.html" class="enlace-nav">🏠 Inicio</a>
+                    <a href="chats.html" class="enlace-nav activo">💬 Chats</a>
+                    <a href="nosotros.html" class="enlace-nav">👥 Nosotros</a>
+                    <a href="asistente.html" class="enlace-nav">🤖 Asistente IA</a>
+                    <a href="publicar.html" class="enlace-nav">📝 Publicar</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="contenedor">
+        <div class="contenedor-chat">
+            <!-- Panel de conversaciones -->
+            <div class="panel-conversaciones">
+                <div class="header-conversaciones">
+                    <h2 class="titulo-conversaciones">💬 Conversaciones</h2>
+                    <div class="buscador-conversaciones">
+                        <span class="icono-buscar-chat">🔍</span>
+                        <input type="text" class="input-buscar-chat" placeholder="Buscar conversaciones..." id="inputBuscarChat">
+                    </div>
+                </div>
+                
+                <div class="lista-conversaciones" id="listaConversaciones">
+                    <!-- Las conversaciones se cargarán aquí -->
+                </div>
+            </div>
+
+            <!-- Área de chat -->
+            <div class="area-chat">
+                <div id="chatVacio" class="chat-vacio">
+                    <h3>💬 Selecciona una conversación</h3>
+                    <p>Elige un contacto de la lista para comenzar a chatear</p>
+                </div>
+
+                <div id="chatActivo" style="display: none; height: 100%; flex-direction: column; display: none;">
+                    <div class="header-chat">
+                        <div class="info-contacto-activo">
+                            <div class="avatar-contacto-activo" id="avatarContactoActivo">M</div>
+                            <div class="datos-contacto-activo">
+                                <h3 id="nombreContactoActivo">María González</h3>
+                                <span class="estado-contacto">En línea</span>
+                            </div>
+                        </div>
+                        <div class="acciones-chat">
+                            <button class="btn-accion-chat" title="Buscar">🔍</button>
+                            <button class="btn-accion-chat" title="Más opciones">⋮</button>
+                        </div>
+                    </div>
+
+                    <div class="contenedor-mensajes" id="contenedorMensajes">
+                        <!-- Los mensajes se cargarán aquí -->
+                    </div>
+
+                    <div class="area-escritura">
+                        <div class="contenedor-input-mensaje">
+                            <button class="btn-adjuntar" title="Adjuntar archivo">📎</button>
+                            <input type="text" class="input-mensaje" placeholder="Escribe un mensaje..." id="inputMensaje">
+                            <button class="btn-enviar" onclick="enviarMensaje()" id="btnEnviar">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/session-manager.js"></script>
+    <script src="js/chats.js"></script>
+</body>
+</html>
